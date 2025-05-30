@@ -48,8 +48,7 @@ span {
   padding: 0px 40px;
 }
 
-body,
-html {
+body {
   overflow-x: hidden;
   box-sizing: border-box;
 }
