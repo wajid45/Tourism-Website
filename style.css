@@ -328,120 +328,6 @@ section {
   left: 0;
   bottom: -14%;
 }
-
-/* about */
-#about {
-  width: 100%;
-}
-
-#about_us {
-  background: url("https://awe365.com/wp-content/uploads/2013/07/adventure-sports-hang-gliding-flickrcc-image-by-Steve-Slater.jpg");
-  width: 100%;
-  height: 630px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  margin: 30px 0px 0px 0px;
-}
-
-#about_us div {
-  padding: 10px;
-  display: grid;
-  align-items: center; 
-  grid-template-columns: 2fr 1fr 1fr;
-  column-gap: 5px;
-  position: relative;
-}
-
-
-#about_us div span {
-  margin: 0;
-  position: absolute;
-  top: 60%;
-  opacity: 0;
-  left: 80%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  transition: 1s;
-}
-
-#about_us p {
-  width: 43em;
-  color: white;
-  text-align: justify;
-  padding-top: 14em;
-  font-family: "Work Sans", sans-serif;
-  margin-left: 6em;
-}
-
-#about_us p::first-letter {
-  padding-left: 47px;
-  font-size: 55px;
-  color: #fc036b;
-}
-
-/* Contributors */
-.contributors {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  margin-top: 0em;
-  padding: 5em 2em;
-  flex-wrap: wrap;
-  width: 100%;
-  min-height: 100vh;
-  background-color: #000;
-  font-family: "Montserrat", sans-serif;
-}
-
-.concard {
-  background-color: #ffff;
-  padding: 0.2em 0.5em;
-  color: #222;
-  height: 12em;
-  width: 10em;
-  border-radius: 5px;
-  margin: 1.5em 0.5em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.concard:hover {
-  background-color: #fb036b;
-  border-bottom: 5px solid #fff;
-  color: #fff;
-  transform: translateY(-7.5px);
-  transition: background-color 0.5s ease, transform 1s ease,
-    border-bottom 0.5s ease 0.2s;
-}
-
-.concard .pfp {
-  width: 50%;
-  border-radius: 100%;
-}
-.text {
-  margin: 1em 0em 0em 0em;
-  text-align: center;
-  font-size: 0.9em;
-}
-.text h1 {
-  font-weight: 600;
-  font-size: 20px;
-  font-family: "Teko", sans-serif;
-}
-.logolink {
-  margin: 0.6em 0em 0em 0em;
-  width: 25%;
-}
-.logolink img {
-  border-radius: 100%;
-  background-color: #ffff;
-}
-.logolink .github-logo {
-  width: 100%;
-}
-
 /* contact */
 #contact {
   width: 90%;
@@ -624,34 +510,6 @@ input[type="submit"]:hover {
   padding: 20px auto;
 }
 
-.social {
-  width: 360px;
-  margin: 30px auto;
-}
-
-.social li {
-  list-style: none;
-}
-
-.social a {
-  margin-right: 10px;
-  font-size: 18px;
-  background-color: transparent;
-  border-radius: 50%;
-  padding: 5px 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.social a:hover {
-  background-color: #fc036b;
-}
-
-.social i {
-  display: inline;
-  text-align: center;
-  color: whitesmoke;
-}
-
 /* animations */
 img {
   transition: transform 0.3s ease;
@@ -710,107 +568,7 @@ body.dark{
   transition: transform 0.2s linear;
 }
 
-/* scroll button */
-.arrow {
-  position: fixed; 
-  z-index: 99;
-  cursor: pointer; 
-  padding: 15px; 
-	width: 8vmin;
-	height: 8vmin;
-	box-sizing: border-box;
-	left: 95%;
-	top: 86%;
-	transform: rotate(-45deg);
-  
-	
-	&::before {
-		content: '';
-		width: 100%;
-		height: 100%;
-		border-width: .8vmin .8vmin 0 0;
-		border-style: solid;
-		border-color:  #fff;
-		transition: .2s ease;
-		display: block;
-		transform-origin: 100% 0;
-	}
-
-	
-	&:after {
-		content: '';
-		float: left;
-		position: relative;
-		top: -86%;
-		width: 100%;
-		height: 100%;
-		border-width: 0 .8vmin 0 0;
-		border-style: solid;
-		border-color:  #fff;
-		transform-origin: 100% 0;
-		transition:.2s ease;
-	}
-	
-	&:hover::after {
-		transform: rotate(45deg);
-		border-color:#fc036b;
-		height: 120%;
-	}
-	&:hover::before {
-		border-color:#fc036b;
-		transform: scale(.8);
-		
-	}
-	
-}
-
-/* Dark Mode Styles Scroll Button  */
-.dark .arrow {
-  &::before {
-    border-color: black; 
-  }
-
-  &:after {
-    border-color: black;
-  }
-
-  &:hover::after {
-    border-color: #fc036b;
-  }
-
-  &:hover::before {
-    border-color: #fc036b;
-  }
-}
-
-
-#quote {
-  position: relative;
-  font-family: sans-serif;
-  text-transform: uppercase;
-  font-size: 2em;
-  letter-spacing: 4px;
-  overflow: hidden;
-  background: linear-gradient(45deg, #fc036b, #fff, #41031d);
-  background-repeat: no-repeat;
-  background-size: 80%;
-  animation: animate 8s linear infinite;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: rgba(255, 255, 255, 0);
-}
-
-@keyframes animate {
-  0% {
-    background-position: -500%;
-  }
-  100% {
-    background-position: 500%;
-  }
-}
-
-
 /* carousel */
-
 @import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
 input[type=radio] {
   display: none;
@@ -881,7 +639,7 @@ input[type=radio] {
   transform: translateY(-80px);
 }
 
-/* end */
+
 /* mobile responsiveness design */
 @media screen and (max-width: 990px) {
   .contact_us {
@@ -895,12 +653,19 @@ input[type=radio] {
   }
 }
 @media screen and (max-width: 1130px) {
-  .menu-btn {
-    display: block;
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    display: flex;
   }
 
   .navbar {
-    padding: 45px;
+    padding: 15px 5px;
   }
 
   .logo {
@@ -908,24 +673,17 @@ input[type=radio] {
     top: 30px;
     left: 15px;
   }
-
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    height: 100vh;
-    justify-content: center;
-    background: #484872;
-    margin-top: -900px;
-    transition: all 0.5s ease;
-  }
-
-  .mobile-menu {
-    margin-top: 602px;
-    border-bottom-right-radius: 30%;
-  }
-
   .nav-links li {
-    margin: 30px auto;
+    margin: 15px 0;
+  }
+
+  .menu-btn {
+    display: block;
+    z-index: 20;
+  }
+
+  .nav-links.active {
+    display: flex;
   }
 }
 
@@ -936,21 +694,12 @@ input[type=radio] {
 	  transform-style: preserve-3d;
 	}
 	
-	#about_us div {
-		padding: 10px;
-		display: block;
-		align-items: normal;
-	}
-	
 	.cards {
 		position: relative;
 		width: 90vw;
 		height: 100%;
 	}
 	
-	#about-quad {
-		display: none;
-	}
 }
 
 @media only screen and (max-width: 850px) {
@@ -990,11 +739,6 @@ input[type=radio] {
 }
 
 @media screen and (max-width: 770px) {
-  #about_us p {
-    width: 85%;
-    padding-top: 7em;
-    margin: auto;
-  }
   form,
   .cbox {
     width: 90%;
@@ -1013,11 +757,7 @@ input[type=radio] {
     margin: 40px auto;
   }
 }
-@media screen and (max-width: 600px) {
-  #about_us p {
-    margin: auto;
-  }
-}
+
 @media screen and (max-width: 470px) {
   .ctn {
     padding: 13px 25px;
