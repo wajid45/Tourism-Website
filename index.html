@@ -171,65 +171,7 @@
                         <div class="ccol-left">
                             <textarea
                                 type="text"
-                             <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Debug: Show form data
-    echo "<pre>Form Data:\n";
-    print_r($_POST);
-    echo "</pre>";
-
-    // Get form data (sanitize inputs)
-    $name = $_POST['name'] ?? '';
-    $email = $_POST['email'] ?? '';
-    $country = $_POST['country'] ?? '';
-    $remarks = $_POST['remarks'] ?? '';
-
-    // Database credentials
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "adventure";
-
-    // Create DB connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    // Debug: Check if table exists
-    $result = $conn->query("SHOW TABLES LIKE 'contacts'");
-    if($result->num_rows == 0){
-        die("Table 'contacts' does not exist in database '$dbname'.");
-    }
-
-    // Prepare and bind
-    $stmt = $conn->prepare("INSERT INTO contacts (name, email, country, remarks) VALUES (?, ?, ?, ?)");
-    if ($stmt === false) {
-        die("Prepare failed: " . $conn->error);
-    }
-
-    // Debug: Check binding
-    if (!$stmt->bind_param("ssss", $name, $email, $country, $remarks)) {
-        die("Bind failed: " . $stmt->error);
-    }
-
-    // Execute
-    if ($stmt->execute()) {
-        echo "Message sent successfully!";
-    } else {
-        echo "Execute failed: " . $stmt->error;
-    }
-
-    $stmt->close();
-    $conn->close();
-}
-?>
-   id="remarks"
+                               id="remarks"
                                 name="remarks"
                                 placeholder="Your Remarks....."
                                 style="height: 150px"
@@ -244,7 +186,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <!--footer-->
         <section class="footer">
             <span
-                >Created By Amina | &#169; 2022 All rights reserved.</span>
+                >Created By Wajid Ali | &#169; 2022 All rights reserved.</span>
             
         </section>
 

@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $country = $_POST['country'];
     $remarks = $_POST['remarks'];
 
-    $sql = "INSERT Into adventure(name, email, country, remarks) VALUES ('$name', '$email', '$country', '$remarks')";
+    $sql = "INSERT Into adventure( name, email, country, remarks) VALUES ('$name', '$email', '$country', '$remarks')";
 
     if(mysqli_query($conn,$sql)){
         echo"Form Submitted Sucessfully";
