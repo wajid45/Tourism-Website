@@ -17,6 +17,7 @@ if ($conn->connect_error) {
 }
 
 $message = '';
+$isError = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get and sanitize form data
@@ -28,22 +29,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Basic validation
     if (empty($name) || empty($email) || empty($country)) {
         $message = "Please fill in all required fields (Name, Email, Country).";
+        $isError = true;
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $message = "Invalid email format.";
+        $isError = true;
     } else {
         // Prepare and bind
         $stmt = $conn->prepare("INSERT INTO contacts (name, email, country, remarks) VALUES (?, ?, ?, ?)");
         if ($stmt === false) {
-            die("Prepare failed: " . $conn->error);
-        }
-        $stmt->bind_param("ssss", $name, $email, $country, $remarks);
-
-        // Execute
-        if ($stmt->execute()) {
-            $message = "Message sent successfully!";
+            $message = "Prepare failed: " . htmlspecialchars($conn->error); // Sanitize DB error message
+            $isError = true;
         } else {
-            $message = "Execute failed: " . $stmt->error;
-        }
+            $stmt->bind_param("ssss", $name, $email, $country, $remarks);
 
-        $stmt->close();
+            // Execute
+            if ($stmt->execute()) {
+                $message = "Message sent successfully!";
+            } else {
+                $message = "Execute failed: " . htmlspecialchars($stmt->error); // Sanitize DB error message
+                $isError = true;
+            }
+            $stmt->close();
+        }
     }
 }
 
@@ -73,7 +80,7 @@ $result = $conn->query("SELECT * FROM contacts ORDER BY id DESC");
 <h2>Contact Form</h2>
 
 <?php if ($message): ?>
-    <div class="<?= strpos($message, 'failed') === false ? 'message' : 'error' ?>">
+    <div class="<?= $isError ? 'error' : 'message' ?>">
         <?= htmlspecialchars($message) ?>
     </div>
 <?php endif; ?>
