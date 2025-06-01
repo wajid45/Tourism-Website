@@ -11,18 +11,12 @@
     >
         <!--navbar-->
         <nav class="navbar glass" style="height: 70px">
-            <span
-                ><a href="#home" style="display: flex; align-items: center"
-                    ><img
-                        class="img2"
-                        src="./img/mountain.png"
-                        width="40"
-                        style="margin: -25px -10px -25px -20px"
-                    />
-                    <h1 class="logo">&nbsp;ADVENTURE</h1></a
-                ></span
-            >
-            <ul class="nav-links">
+            <span>
+                <a href="#home" style="display: flex; align-items: center">
+                    <img class="img2" src="img/mountain.png" width="40" style="margin: -25px -10px -25px -20px"/>
+                    <h1 class="logo">&nbsp;ADVENTURE</h1></a>
+            </span>
+            <ul class="nav-links" id="navLinks">
                 <li>
                     <a href="#home" id="pri" class="cir_border">Home</a>
                 </li>
@@ -35,9 +29,26 @@
                     <a href="#contact" id="hept" class="cir_border">Contact</a>
                 </li>
             </ul>
-            <img src="./img/menu-btn.png" alt="" class="menu-btn" />
-        </nav>
+            <img src="./img/menu-btn.png" alt="" class="menu-btn" id="menuBtn" />
+            <script>
+                const menuBtn = document.getElementById("menuBtn");
+                const navLinks = document.getElementById("navLinks");
+                const navItems = document.querySelectorAll(".nav-links a");
 
+                // Toggle menu on button click
+                menuBtn.addEventListener("click", () => {
+                    navLinks.classList.toggle("active");
+                });
+
+                // Hide menu on nav link click
+                navItems.forEach(link => {
+                    link.addEventListener("click", () => {
+                    navLinks.classList.remove("active");
+                    });
+                });
+            </script>
+
+        </nav>
   <section class="event-detail container">
     <h1>Everest Base Camp Trek</h1>
     <img src="../img/img1.jfif" alt="Everest Base Camp" />

@@ -657,7 +657,7 @@ input[type=radio] {
 .nav-links {
   display: none;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.9); /* Optional glass look */
+  background-color: rgba(0, 0, 0, 0.2); /* Optional glass look */
   position: absolute;
   top: 70px; /* height of navbar */
   right: 0;
