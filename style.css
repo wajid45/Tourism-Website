@@ -1,12 +1,7 @@
 /* Google fonts */
-
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@400;800&family=Parisienne&family=Roboto&family=Teko:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap");
-
-
-/* Root element (aka html) */
 :root {
-
   /* Fonts */
   --ff-parisienne: "Parisienne", cursive;
   --ff-montserrat: "Montserrat", sans-serif;
@@ -22,7 +17,6 @@ img {
   display: block;
 }
 
-
 a {
   text-decoration: none;
 }
@@ -34,6 +28,8 @@ ul {
 body {
   overflow-x: hidden;
   box-sizing: border-box;
+  background-color: white;
+  margin: 0;
 }
 
 .container {
@@ -43,20 +39,19 @@ body {
 }
 
 /* Navbar */
-
 .navbar {
   position: fixed;
   top: 0;
-  left: 0;
   background: rgba(0, 0, 0, 0.2);
   backdrop-filter: saturate(180%) blur(10px);
   display: flex;
-  width: 100%;
+  width: 98%;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 5px;
+  padding: 12px 50px;
   z-index: 10;
-  color: whitesmoke;
+  color: rgba(245, 245, 245, 0.884);
+  padding-left: 25px;
 }
 
 .logo {
@@ -82,6 +77,12 @@ body {
 .nav-links li a {
   color: white;
   cursor: pointer;
+}
+
+.nav-links li a:hover {
+  color: #fc036b;
+  transition: color 0.3s ease;
+
 }
 
 .cir_border {
@@ -238,7 +239,6 @@ section {
   margin-bottom: 1rem;
 }
 
-/* Image style */
 .event-detail img {
   width: 100%;
   height: auto;
@@ -246,7 +246,6 @@ section {
 
 }
 
-/* Paragraph text */
 .event-detail p {
   font-size: 1.1rem;
   color: #000000;
@@ -254,7 +253,6 @@ section {
   margin-bottom: 1.5rem;
 }
 
-/* Event details list */
 .event-detail ul {
   list-style: none;
   padding: 0;
@@ -326,7 +324,6 @@ section {
 }
 
 .explore-content h1 {
-  /* width: 100%; */
   font-size: calc(2.2rem + 1vw);
   letter-spacing: 0.3rem;
   margin: auto;
@@ -455,7 +452,6 @@ form {
 .c_boxx i {
   font-size: 38px;
   margin-right: 10px;
-  /* margin-left: 0.5em; */
 }
 
 input[type="text"],
@@ -579,7 +575,7 @@ img {
 }
 
 img:hover {
-  transform: scale(1.1);
+  transform: scale(1);
 }
 
 .cir_border:hover{
@@ -598,8 +594,7 @@ img:hover {
 }
 
 body {
- background-color: black;
-  color: white;
+ background-color: white;
  padding-top: 70px;
 }
 
@@ -717,20 +712,18 @@ input[type=radio] {
   }
 }
 @media screen and (max-width: 1130px) {
- /* By default, hide the nav links on small screens */
 .nav-links {
-  display: none;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.2); /* Optional glass look */
+  background-color: rgba(190, 190, 190, 0.849);
   position: absolute;
-  top: 70px; /* height of navbar */
+  top: 70px;
   right: 0;
   width: 100%;
   padding: 1rem;
   text-align: right;
   z-index: 10;
   transition: all 0.3s ease;
-
+  
 }
 
   .navbar {
@@ -745,7 +738,6 @@ input[type=radio] {
   .nav-links li {
     margin: 15px 0;
   }
-
   .menu-btn {
     display: block;
     z-index: 20;
