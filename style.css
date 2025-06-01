@@ -31,11 +31,6 @@ ul {
   list-style: none;
 }
 
-span {
-  color: #7c7c7c;
-  padding: 0px 40px;
-}
-
 body {
   overflow-x: hidden;
   box-sizing: border-box;
@@ -72,8 +67,6 @@ body {
   padding: 0 1.2rem;
   font-weight: 300;
   color: rgb(254, 252, 252); 
-  
-  
 }
 
 .nav-links {
@@ -227,6 +220,74 @@ section {
   margin-top: 30px;
 }
 
+/* events */
+.event-detail.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 2rem;
+  background: #ffffffec; 
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.event-detail h1 {
+  font-size: 2.5rem;
+  color: #030303;
+  margin-bottom: 1rem;
+}
+
+/* Image style */
+.event-detail img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+
+}
+
+/* Paragraph text */
+.event-detail p {
+  font-size: 1.1rem;
+  color: #000000;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Event details list */
+.event-detail ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: #000000;
+}
+
+.event-detail ul li {
+  margin: 0.5rem 0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .event-detail.container {
+    padding: 1.5rem 1rem;
+  }
+
+  .event-detail h1 {
+    font-size: 2rem;
+  }
+
+  .event-detail p, .event-detail ul {
+    font-size: 1rem;
+  }
+
+  .event-detail .ctn {
+    width: 100%;
+    padding: 0.75rem;
+  }
+}
+
+
 /* explore */
 .explore {
   width: 100%;
@@ -328,6 +389,7 @@ section {
   left: 0;
   bottom: -14%;
 }
+
 /* contact */
 #contact {
   width: 90%;
@@ -491,8 +553,8 @@ input[type="submit"]:hover {
 /* footer */
 .footer {
   width: 100%;
-  min-height: 100px;
-  padding: 20px 80px;
+  min-height: 60px;
+  align-items: center;
   margin: 0;
   background: #222;
   text-align: center;
@@ -501,13 +563,14 @@ input[type="submit"]:hover {
 .footer p {
   color: whitesmoke;
   margin: 20px auto;
-  padding: 20px auto;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer span {
   display: block;
   color: whitesmoke;
-  padding: 20px auto;
 }
 
 /* animations */
@@ -537,6 +600,7 @@ img:hover {
 body {
  background-color: black;
   color: white;
+ padding-top: 70px;
 }
 
 body.dark{
@@ -733,7 +797,7 @@ input[type=radio] {
 
   /*footer*/
   .footer {
-    padding: 10px;
+    padding: 5px;
   }
   .content-col {
     width: 100%;
