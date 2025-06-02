@@ -154,47 +154,59 @@
                         <h1 class="color">Send us a message</h1>
                         <div></div>
                     </div>
+
+                    <!-- Name & Email -->
                     <div class="crow-in">
                         <input
                             type="text"
                             id="name"
                             name="name"
                             placeholder="Your name"
+                            required
                         />
                         <input
-                            type="text"
+                            type="email"
                             id="email"
                             name="email"
-                            placeholder="Your Email id"
+                            placeholder="Your Email"
+                            required
                         />
                     </div>
+
+                    <!-- Country -->
                     <div class="crow">
                         <div class="ccol-left">
-                            <select name="country" id="country">
-                                <option value="India">Pakistan</option>
+                            <select name="country" id="country" required>
+                                <option value="">Select Country</option>
+                                <option value="Pakistan">Pakistan</option>
                                 <option value="Russia">Russia</option>
-                                <option value="usa">USA</option>
+                                <option value="USA">USA</option>
                                 <option value="Japan">Japan</option>
                                 <option value="France">France</option>
                                 <option value="Brazil">Brazil</option>
                             </select>
                         </div>
                     </div>
+
+                    <!-- Remarks -->
                     <div class="crow">
                         <div class="ccol-left">
                             <textarea
-                                type="text"
-                               id="remarks"
+                                id="remarks"
                                 name="remarks"
-                                placeholder="Your Remarks....."
+                                placeholder="Your Remarks..."
                                 style="height: 150px"
+                                required
                             ></textarea>
                         </div>
                     </div>
-                    <input class="crow-s" type="submit" value="Submit" />
+
+                    <!-- Submit Button -->
+                    <input class="crow-s" type="submit" name="submit" value="Submit" />
                 </form>
             </div>
         </section>
+
 
         <!--footer-->
         <section class="footer">
