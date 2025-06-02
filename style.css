@@ -396,6 +396,7 @@ section {
   margin-top: 3rem;
   display: flex;
   font-family: var(--ff-roboto);
+  justify-content: center;
 }
 
 form {
@@ -505,6 +506,7 @@ input[type="submit"]:hover {
 
 .crow-message {
   margin: 1rem;
+  color: white;
 }
 
 .crow-message div {
@@ -723,7 +725,8 @@ input[type=radio] {
   text-align: right;
   z-index: 10;
   transition: all 0.3s ease;
-  
+    display: none;  /* Initially hidden */
+
 }
 
   .navbar {
