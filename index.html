@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+op9p[DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -26,7 +26,7 @@
                 </li>
                 <li>
                     <a href="#tours" id="quad" class="cir_border">Tours</a>
-                    <a href="#contact" id="hept" class="cir_border">Contact</a>
+                    <a href="#contact"  class="cir_border">Book</a>
                 </li>
             </ul>
             <img src="./img/menu-btn.png" alt="" class="menu-btn" id="menuBtn" />
@@ -77,7 +77,7 @@
                         <h4 class="dark">Everest camp trek</h4>
                         <p class="font-color">
                             Everest base camp trek is without a doubt, one of
-                            the most renowned travel destinations in the world.
+                            the most renowned travel destinations in the world full of <br> adventure.
                         </p>
                         <a href="everest.html" class="ctn">View Details</a>
                     </article>
@@ -143,49 +143,86 @@
         </section>
 
         <!-- contact -->
-        <section id="contact">
-            <div class="title">
-                <h1 class="font-color">Contact Us</h1>
-                <div class="line"></div>
-            </div>
-            <div class="contact_us">
-                <form class="cform" action="contact.php" method="post">
-                    <div class="crow-message">
-                        <h1 class="color">Send us a message</h1>
-                        <div></div>
-                    </div>
+      <section id="book-tour" class="contact">
+  <div class="title">
+    <h1 class="font-color">Book a Tour</h1>
+    <div class="line"></div>
+  </div>
 
-                    <!-- Name & Email -->
-                    <div class="crow-in">
-                        <input type="text" id="name" name="name" placeholder="Your name" required/>
-                        <input type="email" id="email" name="email"placeholder="Your Email" required/>
-                    </div>
+  <div class="contact-form-container">
+    <form class="booking-form" action="contact.php" method="post">
+      
+      <!-- Form Header -->
+      <div class="form-header">
+        <h2 class="color">Reserve Your Trip</h2>
+      </div>
 
-                    <!-- Country -->
-                    <div class="crow">
-                        <div class="ccol-left">
-                            <select name="country" id="country" required>
-                                <option value="">Select Country</option>
-                                <option value="Pakistan">Pakistan</option>
-                                <option value="Russia">Russia</option>
-                                <option value="USA">USA</option>
-                                <option value="Japan">Japan</option>
-                                <option value="France">France</option>
-                                <option value="Brazil">Brazil</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="crow">
-                        <div class="ccol-left">
-                            <textarea
-                                id="remarks" name="remarks" placeholder="Your Remarks..." style="height: 150px" required>
-                            </textarea>
-                        </div>
-                    </div>
-                    <input class="crow-s" type="submit" name="submit" value="Submit" />
-                </form>
-            </div>
-        </section>
+      <!-- Full Name and Email -->
+      <div class="form-group">
+        <input type="text" id="full_name" name="full_name" placeholder="Your Full Name" required />
+        <input type="email" id="email" name="email" placeholder="Your Email Address" required />
+      </div>
+
+      <!-- Phone Number and Travel Date -->
+      <div class="form-group">
+        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required />
+        <input type="date" id="travel_date" name="travel_date" required />
+      </div>
+
+      <!-- Number of Travelers and Country -->
+      <div class="form-group">
+        <input type="number" id="travelers" name="travelers" placeholder="Number of Travelers" min="1" required />
+        <select name="country" id="country" required>
+          <option value="">Select Your Country</option>
+          <option value="Pakistan">Pakistan</option>
+          <option value="Russia">Russia</option>
+          <option value="USA">USA</option>
+          <option value="Japan">Japan</option>
+          <option value="France">France</option>
+          <option value="Brazil">Brazil</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <!-- Preferred Destination -->
+      <div class="form-group">
+        <input type="text" id="destination" name="destination" placeholder="Preferred Destination (Optional)" />
+      </div>
+
+      <!-- Remarks -->
+      <div class="form-group">
+        <textarea id="remarks" name="remarks" placeholder="Any special requests or comments..." rows="5" required></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-group">
+        <input type="submit" name="submit" value="Book Now" class="submit-btn" />
+      </div>
+
+    </form>
+  </div>
+</section>
+
+<script>
+  function validateForm() {
+    const phone = document.getElementById("phone").value;
+    const phonePattern = /^[0-9]{10,15}$/;
+    if (!phonePattern.test(phone)) {
+      alert("Please enter a valid phone number (10–15 digits).");
+      return false;
+    }
+
+    const date = new Date(document.getElementById("travel-date").value);
+    const today = new Date();
+    if (date < today) {
+      alert("Please select a future travel date.");
+      return false;
+    }
+
+    return true;
+  }
+</script>
+
 
         <!--footer-->
         <section class="footer">

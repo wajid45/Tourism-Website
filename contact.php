@@ -1,26 +1,38 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "adventure");
+// Database connection settings
+$host = "localhost";
+$dbname = "adventure";
+$username = "root";
+$password = "";
 
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+// Create connection
+$conn = new mysqli($host, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
-    // Get and sanitize form data
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $country = mysqli_real_escape_string($conn, $_POST['country']);
-    $remarks = mysqli_real_escape_string($conn, $_POST['remarks']);
+// Get and sanitize form data
+$full_name = $conn->real_escape_string($_POST['full_name']);
+$email = $conn->real_escape_string($_POST['email']);
+$phone = $conn->real_escape_string($_POST['phone']);
+$travel_date = $_POST['travel_date'];
+$travelers = (int)$_POST['travelers'];
+$country = $conn->real_escape_string($_POST['country']);
+$destination = $conn->real_escape_string($_POST['destination']);
+$remarks = $conn->real_escape_string($_POST['remarks']);
 
-    // Insert into database
-    $sql = "INSERT INTO contacts (name, email, country, remarks) VALUES ('$name', '$email', '$country', '$remarks')";
+// SQL Insert Query
+$sql = "INSERT INTO tour_bookings (full_name, email, phone, travel_date, travelers, country, destination, remarks)
+        VALUES ('$full_name', '$email', '$phone', '$travel_date', $travelers, '$country', '$destination', '$remarks')";
 
-    if (mysqli_query($conn, $sql)) {
-        echo "<h2>Form Submitted Successfully</h2>";
-    } else {
-        echo "<h2>Form Submission Failed: " . mysqli_error($conn) . "</h2>";
-    }
+if ($conn->query($sql) === TRUE) {
+    echo "Booking successful! We will contact you shortly.";
+    header('Location: index.html');
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-mysqli_close($conn);
+$conn->close();
 ?>
